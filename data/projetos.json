@@ -1,4 +1,20 @@
-
 [
-    {"id": 1, "titulo": "Projeto A", "alunoId": 1, "status": "Enviado"}
+    {
+        "id": 1,
+        "titulo": "- Editado",
+        "alunoId": 1,
+        "status": "Enviado"
+    },
+    {
+        "id": 2,
+        "titulo": "Projeto",
+        "alunoId": 1,
+        "status": "Aprovado"
+    },
+    {
+        "id": 3,
+        "titulo": "Projeto",
+        "alunoId": 3,
+        "status": "Aprovado"
+    }
 ]

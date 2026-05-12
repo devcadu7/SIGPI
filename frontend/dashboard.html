@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SIGPI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>SIGPI - Sistema de Gestão de Projetos Integrados</h1>
+        <nav>
+            <a href="#" id="logoutBtn">Sair</a>
+        </nav>
+    </header>
+    <main id="dashboard-container" class="dashboard-main">
+        <section class="dashboard-header-panel">
+            <div>
+                <h2>Bem-vindo ao SIGPI</h2>
+                <p id="dashboardSubtitle">Carregando informações do seu perfil...</p>
+                <div id="dashboardMessage" class="message"></div>
+            </div>
+            <div class="dashboard-actions-top">
+                <button id="refreshBtn" class="btn-secondary">Atualizar</button>
+            </div>
+        </section>
+
+        <section class="summary-grid" id="summaryGrid">
+            <!-- Resumo do dashboard gerado pelo JS -->
+        </section>
+
+        <section class="dashboard-body">
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>Projetos</h3>
+                    <button id="newProjectBtn" class="btn-primary">Novo projeto</button>
+                </div>
+                <div id="projectsSection" class="panel-content"></div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>Avaliações</h3>
+                    <button id="newEvaluationBtn" class="btn-primary">Nova avaliação</button>
+                </div>
+                <div id="evaluationsSection" class="panel-content"></div>
+            </div>
+        </section>
+
+        <section class="forms-grid">
+            <article class="form-card" id="projectFormCard">
+                <h3 id="projectFormTitle">Cadastrar projeto</h3>
+                <form id="projectForm">
+                    <label>Título</label>
+                    <input type="text" id="projectTitle" required>
+                    <label>Aluno</label>
+                    <select id="projectAluno" required></select>
+                    <label>Status</label>
+                    <select id="projectStatus">
+                        <option value="Enviado">Enviado</option>
+                        <option value="Em revisão">Em revisão</option>
+                        <option value="Aprovado">Aprovado</option>
+                        <option value="Rejeitado">Rejeitado</option>
+                    </select>
+                    <div class="form-buttons">
+                        <button type="submit" class="btn-primary">Salvar projeto</button>
+                        <button type="button" id="projectFormCancel" class="btn-secondary">Cancelar</button>
+                    </div>
+                </form>
+            </article>
+
+            <article class="form-card" id="evaluationFormCard">
+                <h3 id="evaluationFormTitle">Cadastrar avaliação</h3>
+                <form id="evaluationForm">
+                    <label>Projeto</label>
+                    <select id="evaluationProject" required></select>
+                    <label>Professor</label>
+                    <select id="evaluationProfessor" required></select>
+                    <label>Nota</label>
+                    <input type="number" step="0.1" min="0" max="10" id="evaluationGrade" required>
+                    <label>Feedback</label>
+                    <textarea id="evaluationFeedback" rows="4"></textarea>
+                    <div class="form-buttons">
+                        <button type="submit" class="btn-primary">Salvar avaliação</button>
+                        <button type="button" id="evaluationFormCancel" class="btn-secondary">Cancelar</button>
+                    </div>
+                </form>
+            </article>
+        </section>
+    </main>
+    <script src="js/main.js?v=4"></script>
+</body>
+</html>
