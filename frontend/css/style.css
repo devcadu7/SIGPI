@@ -1,0 +1,7 @@
+/* Estilos gerais, container de login, dashboard e responsividade */
+body { font-family: Arial, 
+sans-serif; 
+margin: 0; 
+background-color: #f4f4f4; }
+/* ... (estilos para header, nav, formulários, botões, etc.) ... */
+.error-message { color: red; }

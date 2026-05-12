@@ -1,0 +1,3 @@
+# Servidor HTTP simples para servir arquivos e lidar com a API
+from http.server import SimpleHTTPRequestHandler, HTTPServer
+# ... (código para rotear requisições, interagir com auth.py e manipular JSON) ...
