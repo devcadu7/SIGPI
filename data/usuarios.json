@@ -1,5 +1,23 @@
-[
-    {"id": 1, "username": "aluno", "password": "123", "profile": "aluno"},
-    {"id": 2, "username": "professor", "password": "123", "profile": "professor"}
-    
-]
+{
+    "alunos": [
+        {
+            "id": 1,
+            "username": "aluno",
+            "password": "123"
+        },
+        {
+            "id": 3,
+            "username": "Carlos Eduardo",
+            "password": "123456"
+        }
+    ],
+    "professores": [
+        {
+            "id": 2,
+            "username": "professor",
+            "password": "123"
+        }
+    ],
+    "coordenacao": [],
+    "empresasParceiras": []
+}

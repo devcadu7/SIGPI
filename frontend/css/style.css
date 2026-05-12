@@ -5,3 +5,5 @@ margin: 0;
 background-color: #f4f4f4; }
 /* ... (estilos para header, nav, formulários, botões, etc.) ... */
 .error-message { color: red; }
+.success-message { color: green; }
+.button-group { display: flex; gap: 10px; margin-top: 1rem; }

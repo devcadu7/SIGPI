@@ -8,8 +8,8 @@
 </head>
 <body>
     <div class="login-container">
-        <h2>Login SIGPI</h2>
-        <form id="loginForm">
+        <h2>Login / Cadastro SIGPI</h2>
+        <form id="authForm">
             <div class="form-group">
                 <label for="username">Usuário:</label>
                 <input type="text" id="username" name="username" required>
@@ -18,8 +18,20 @@
                 <label for="password">Senha:</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <button type="submit">Entrar</button>
-            <p id="error-message" class="error-message"></p>
+            <div class="form-group">
+                <label for="profile">Tipo de usuário:</label>
+                <select id="profile" name="profile" required>
+                    <option value="aluno">Aluno</option>
+                    <option value="professor">Professor</option>
+                    <option value="coordenacao">Coordenação</option>
+                    <option value="empresa">Empresa parceira</option>
+                </select>
+            </div>
+            <div class="button-group">
+                <button type="button" id="loginButton">Entrar</button>
+                <button type="button" id="registerButton">Cadastrar</button>
+            </div>
+            <p id="message" class="message"></p>
         </form>
     </div>
     <script src="js/main.js"></script>
