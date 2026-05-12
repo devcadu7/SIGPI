@@ -20,6 +20,29 @@ def save_users(users):
     with open(USERS_FILE, 'w', encoding='utf-8') as f:
         json.dump(users, f, indent=4, ensure_ascii=False)
 
+PROJECTS_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'data', 'projetos.json'))
+EVALUATIONS_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'data', 'avaliacoes.json'))
+
+
+def load_projects():
+    with open(PROJECTS_FILE, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+
+def save_projects(projects):
+    with open(PROJECTS_FILE, 'w', encoding='utf-8') as f:
+        json.dump(projects, f, indent=4, ensure_ascii=False)
+
+
+def load_evaluations():
+    with open(EVALUATIONS_FILE, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+
+def save_evaluations(evaluations):
+    with open(EVALUATIONS_FILE, 'w', encoding='utf-8') as f:
+        json.dump(evaluations, f, indent=4, ensure_ascii=False)
+
 
 def profile_key(profile):
     if profile not in PROFILE_MAP:
