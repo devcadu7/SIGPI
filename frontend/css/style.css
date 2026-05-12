@@ -1,9 +1,179 @@
-/* Estilos gerais, container de login, dashboard e responsividade */
-body { font-family: Arial, 
-sans-serif; 
-margin: 0; 
-background-color: #f4f4f4; }
-/* ... (estilos para header, nav, formulários, botões, etc.) ... */
-.error-message { color: red; }
-.success-message { color: green; }
-.button-group { display: flex; gap: 10px; margin-top: 1rem; }
+/* ========== DESIGN SYSTEM ========== */
+
+/* Paleta Principal */
+:root {
+  --azul-primario: #1A56A0;
+  --azul-secundario: #2563A8;
+  --azul-profundo: #1E3A5F;
+  --azul-claro: #E8F0FA;
+  
+  /* Paleta Neutra */
+  --branco: #FFFFFF;
+  --fundo-geral: #F7F8FA;
+  --bordas: #E2E6EA;
+  --texto-secundario: #9CA3AF;
+  --texto-principal: #374151;
+  --titulos: #111827;
+  
+  /* Cores de Status */
+  --sucesso: #16A34A;
+  --atencao: #CA8A04;
+  --erro: #DC2626;
+  --em-revisao: #2563A8;
+  --destaque: #7C3AED;
+}
+
+/* Tipografia */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&family=Roboto+Mono:wght@400;500&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--fundo-geral);
+  color: var(--texto-principal);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--titulos);
+  font-weight: 700;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1rem; }
+
+code, pre {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.875rem;
+}
+
+/* ========== COMPONENTES ========== */
+
+/* Botões */
+button {
+  font-family: 'Inter', sans-serif;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.btn-primario {
+  background-color: var(--azul-primario);
+  color: var(--branco);
+}
+
+.btn-primario:hover {
+  background-color: var(--azul-secundario);
+}
+
+.btn-secundario {
+  background-color: var(--azul-claro);
+  color: var(--azul-primario);
+  border: 2px solid var(--azul-primario);
+}
+
+.btn-secundario:hover {
+  background-color: var(--azul-primario);
+  color: var(--branco);
+}
+
+/* Formulários */
+input, textarea, select {
+  font-family: 'Inter', sans-serif;
+  padding: 0.75rem;
+  border: 1px solid var(--bordas);
+  border-radius: 0.375rem;
+  background-color: var(--branco);
+  color: var(--texto-principal);
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--azul-primario);
+  box-shadow: 0 0 0 3px var(--azul-claro);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--titulos);
+}
+
+/* Mensagens */
+.error-message {
+  color: var(--erro);
+  background-color: #FEE2E2;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  border-left: 4px solid var(--erro);
+}
+
+.success-message {
+  color: var(--sucesso);
+  background-color: #DCFCE7;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  border-left: 4px solid var(--sucesso);
+}
+
+.message {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 0.375rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+/* ========== MODAL / CONTAINER ========== */
+.login-container, .dashboard-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--branco);
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== RESPONSIVIDADE ========== */
+@media (max-width: 768px) {
+  .login-container, .dashboard-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
+  
+  .button-group {
+    flex-direction: column;
+  }
+  
+  button {
+    width: 100%;
+  }
+}
