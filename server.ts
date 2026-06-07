@@ -290,6 +290,36 @@ app.post('/api/empresa-add', (req, res) => {
     res.json({ success: true });
 });
 
+// Edit Partner Company
+app.post('/api/empresa-edit', (req, res) => {
+    const { originalCnpj, name, cnpj, contactEmail, proposalDemand } = req.body;
+    const index = companies.findIndex(c => c.cnpj === originalCnpj);
+    if (index !== -1) {
+        companies[index] = {
+            ...companies[index],
+            name,
+            cnpj,
+            contactEmail,
+            proposalDemand
+        };
+        res.json({ success: true });
+    } else {
+        res.status(404).json({ success: false, message: 'Empresa não encontrada.' });
+    }
+});
+
+// Delete Partner Company
+app.post('/api/empresa-delete', (req, res) => {
+    const { cnpj } = req.body;
+    const index = companies.findIndex(c => c.cnpj === cnpj);
+    if (index !== -1) {
+        companies.splice(index, 1);
+        res.json({ success: true });
+    } else {
+        res.status(404).json({ success: false, message: 'Empresa não encontrada.' });
+    }
+});
+
 // Corporate feedback on solver project endpoint
 app.post('/api/empresa-feedback', (req, res) => {
     const { title, grade, feedback } = req.body;
