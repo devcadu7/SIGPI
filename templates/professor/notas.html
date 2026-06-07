@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>SIGPI - Diário de Classe (Lançamento de Notas)</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-container-low": "#f4f3f8",
+                "on-primary-fixed-variant": "#1f477b",
+                "surface-tint": "#3a5f94",
+                "tertiary-fixed-dim": "#ffb690",
+                "on-primary-fixed": "#001b3c",
+                "on-error-container": "#93000a",
+                "outline": "#737780",
+                "on-secondary-fixed-variant": "#004c68",
+                "surface-dim": "#dad9de",
+                "on-secondary-container": "#005371",
+                "on-tertiary": "#ffffff",
+                "primary": "#001e40",
+                "on-primary-container": "#799dd6",
+                "on-background": "#1a1c1f",
+                "surface-bright": "#f9f9fe",
+                "inverse-on-surface": "#f1f0f5",
+                "error": "#ba1a1a",
+                "tertiary-fixed": "#ffdbca",
+                "outline-variant": "#c3c6d1",
+                "surface-container-lowest": "#ffffff",
+                "on-secondary": "#ffffff",
+                "secondary-fixed-dim": "#78d1ff",
+                "primary-fixed-dim": "#a7c8ff",
+                "on-tertiary-container": "#d8885c",
+                "background": "#f9f9fe",
+                "tertiary": "#381300",
+                "inverse-surface": "#2f3034",
+                "tertiary-container": "#592300",
+                "on-tertiary-fixed-variant": "#723610",
+                "on-secondary-fixed": "#001e2c",
+                "inverse-primary": "#a7c8ff",
+                "surface-variant": "#e2e2e7",
+                "primary-fixed": "#d5e3ff",
+                "on-surface-variant": "#43474f",
+                "surface-container": "#eeedf2",
+                "on-error": "#ffffff",
+                "on-primary": "#ffffff",
+                "error-container": "#ffdad6",
+                "primary-container": "#003366",
+                "surface-container-high": "#e8e8ed",
+                "secondary": "#006689",
+                "secondary-container": "#5bcaff",
+                "on-surface": "#1a1c1f",
+                "surface-container-highest": "#e2e2e7",
+                "surface": "#f9f9fe",
+                "secondary-fixed": "#c3e8ff",
+                "on-tertiary-fixed": "#341100"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "gutter": "16px",
+                "padding-card": "20px",
+                "base": "8px",
+                "padding-standard": "16px",
+                "section-gap": "32px"
+            },
+            "fontFamily": {
+                "label-medium": ["Inter"],
+                "h1-mobile": ["Inter"],
+                "label-small": ["Inter"],
+                "h1-desktop": ["Inter"],
+                "body-lg": ["Inter"],
+                "h2": ["Inter"],
+                "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                "label-medium": ["14px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                "h1-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "label-small": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                "h1-desktop": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-lg": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "h2": ["20px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .zebra-row:nth-child(even) { background-color: #fcfbfe; }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-padding-standard h-16 bg-surface border-b border-outline-variant">
+    <div class="flex items-center gap-4">
+        <span class="text-h2 font-h2 font-bold text-primary">SIGPI - Professor</span>
+    </div>
+    <div class="flex items-center gap-padding-standard">
+        <span class="text-sm font-semibold text-primary">Prof. Dr. Carlos Silva</span>
+        <div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant">
+            <img alt="Professor Avatar" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiQO84SFLmPnINTTFHYxTxzYlkvbl25GgJuci_--OPLF0gvqBxfiMmc_S4iWpgM32zvW1i5Tg4u8g2rxU411qKZcxUeOAP5lDnAEQ4CJnaV52FGTIdAMRUfEP2p0shFBlJoAoIgnL7YKPNNZhzbrw0cumiZzKDFJxBFcJS4L8znQR7RsZufJ_ZkR1yIj_zXi7IHRLYgtEVoNGpMmOOvxqi5lYbF1A3DSQSWioTBhiNlPPVw3fhS6GfbwQ-Lh-gdcxZQH5QKjdZP_54">
+        </div>
+    </div>
+</header>
+
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-60 flex flex-col z-40 bg-surface-container-low shadow-sm border-r border-outline-variant">
+    <div class="p-padding-standard mb-4">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-primary rounded flex items-center justify-center text-white">
+                <span class="material-symbols-outlined">school</span>
+            </div>
+            <div>
+                <h2 class="font-h2 text-h2 font-bold text-primary">Diário de Classe</h2>
+                <p class="text-[10px] text-on-surface-variant uppercase">Módulo Docente</p>
+            </div>
+        </div>
+    </div>
+    <nav class="flex-grow">
+        <a class="text-on-surface-variant flex items-center gap-base px-padding-standard py-3 hover:bg-surface-container transition-all" href="/professor/dashboard/">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="font-label-medium text-label-medium">Dashboard</span>
+        </a>
+        <a class="text-on-surface-variant flex items-center gap-base px-padding-standard py-3 hover:bg-surface-container transition-all" href="/professor/turmas/">
+            <span class="material-symbols-outlined">groups</span>
+            <span class="font-label-medium text-label-medium">Turmas</span>
+        </a>
+        <a class="text-primary font-bold border-l-4 border-secondary-container bg-surface-container-high flex items-center gap-base px-padding-standard py-3 hover:bg-surface-container transition-all" href="/professor/notas/">
+            <span class="material-symbols-outlined">menu_book</span>
+            <span class="font-label-medium text-label-medium">Diário</span>
+        </a>
+        <a class="text-on-surface-variant flex items-center gap-base px-padding-standard py-3 hover:bg-surface-container transition-all" href="/professor/orientandos/">
+            <span class="material-symbols-outlined">assignment_ind</span>
+            <span class="font-label-medium text-label-medium">Orientações</span>
+        </a>
+    </nav>
+</aside>
+
+<!-- Main Canvas -->
+<main class="ml-60 pt-20 p-section-gap min-h-screen">
+    <div class="mb-8">
+        <h1 class="font-h1-desktop text-h1-desktop text-primary">Diário de Classe</h1>
+        <p class="text-body-lg text-on-surface-variant">Gerencie e publique os lançamentos de notas referentes a cada etapa do Projeto Integrador.</p>
+    </div>
+
+    <!-- Filter selectors -->
+    <section class="bg-white border border-outline-variant p-6 rounded-xl shadow-sm mb-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div>
+            <label class="block font-label-medium text-label-medium text-primary mb-2">Selecione a Turma</label>
+            <div class="relative">
+                <select id="diary-class-select" class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 text-body-sm focus:border-secondary focus:ring-1 focus:ring-secondary outline-none appearance-none">
+                    <option value="pi-1">PI101 - Projeto Integrador I (Turma A)</option>
+                    <option value="web-2">WEB301 - Desenvolvimento Web II (Turma B)</option>
+                    <option value="pti-h">PTI004 - Projeto Temático de Inovação (Turma H)</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-3 top-3.5 pointer-events-none text-outline">expand_more</span>
+            </div>
+        </div>
+        <div>
+            <label class="block font-label-medium text-label-medium text-primary mb-2">Avaliação / Etapa</label>
+            <div class="relative">
+                <select class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 text-body-sm focus:border-secondary focus:ring-1 focus:ring-secondary outline-none appearance-none">
+                    <option value="m1">Milestone 1 - Concepção & Canvas (30%)</option>
+                    <option value="m2">Milestone 2 - Protótipo & Modelagem (30%)</option>
+                    <option value="m3">Milestone 3 - Entrega Cód / Defesa (40%)</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-3 top-3.5 pointer-events-none text-outline">expand_more</span>
+            </div>
+        </div>
+        <div class="flex items-end justify-end">
+            <button onclick="salvarLoteGeral()" class="w-full md:w-auto bg-secondary text-white py-3 px-6 rounded-lg font-bold hover:brightness-110 shadow flex items-center justify-center gap-2 active:scale-95 transition-all">
+                <span class="material-symbols-outlined">save_all</span> Salvar Notas em Lote
+            </button>
+        </div>
+    </section>
+
+    <!-- Students Diary Table -->
+    <section class="bg-white border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+        <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-surface-container-low border-b border-outline-variant">
+                        <th class="px-6 py-4 font-bold text-primary text-label-medium w-16">ID / RA</th>
+                        <th class="px-6 py-4 font-bold text-primary text-label-medium">Nome do Aluno</th>
+                        <th class="px-6 py-4 font-bold text-primary text-label-medium">Projeto Integrador</th>
+                        <th class="px-6 py-4 font-bold text-primary text-label-medium w-28">Nota M1</th>
+                        <th class="px-6 py-4 font-bold text-primary text-label-medium w-28">Nota M2</th>
+                        <th class="px-6 py-4 font-bold text-primary text-label-medium w-28">Nota M3</th>
+                        <th class="px-6 py-4 font-bold text-primary text-label-medium w-28">Média Final</th>
+                        <th class="px-6 py-4 font-bold text-primary text-label-medium text-right w-36">Ação</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-outline-variant/30" id="diary-rows">
+                    <!-- Dynamically populated -->
+                </tbody>
+            </table>
+        </div>
+        <div class="p-6 bg-surface-container-lowest border-t border-outline-variant text-right">
+            <p class="text-body-sm text-on-surface-variant font-medium">Lançamento de classe referenciado de acordo com as portarias acadêmicas institucionais.</p>
+        </div>
+    </section>
+</main>
+
+<script>
+    let studentsDataset = [];
+
+    async function loadDiary() {
+        try {
+            const res = await fetch('/api/data');
+            const data = await res.json();
+            
+            studentsDataset = data.students || [];
+            
+            renderDiaryTable(studentsDataset);
+
+        } catch (e) {
+            console.error("Erro ao carregar o Diário:", e);
+        }
+    }
+
+    function renderDiaryTable(students) {
+        const tbody = document.getElementById('diary-rows');
+        tbody.innerHTML = '';
+
+        if (students.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="8" class="px-6 py-8 text-center text-on-surface-variant">Nenhum estudante matriculado nesta turma.</td></tr>`;
+            return;
+        }
+
+        students.forEach((s) => {
+            const n1 = s.grades.m1;
+            const n2 = s.grades.m2;
+            const n3 = s.grades.m3;
+            // Weighted average: (m1*0.3) + (m2*0.3) + (m3*0.4)
+            const media = ((n1 * 0.3) + (n2 * 0.3) + (n3 * 0.4)).toFixed(1);
+
+            tbody.innerHTML += `
+                <tr class="zebra-row hover:bg-surface-bright transition-colors">
+                    <td class="px-6 py-4 font-bold text-primary font-body-sm">#${s.ra}</td>
+                    <td class="px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary text-xs">${s.name.charAt(0)}</div>
+                            <span class="font-bold text-on-surface text-body-sm">${s.name}</span>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 text-on-surface-variant font-body-sm text-sm">${s.activeProject}</td>
+                    <td class="px-6 py-4">
+                        <input type="number" step="0.1" min="0" max="10" value="${n1}" 
+                               class="w-20 h-10 border border-outline-variant rounded px-2 bg-transparent text-center focus:ring-1 focus:ring-secondary diary-input"
+                               data-ra="${s.ra}" data-field="m1" onchange="recalculateRow(this)">
+                    </td>
+                    <td class="px-6 py-4">
+                        <input type="number" step="0.1" min="0" max="10" value="${n2}" 
+                               class="w-20 h-10 border border-outline-variant rounded px-2 bg-transparent text-center focus:ring-1 focus:ring-secondary diary-input"
+                               data-ra="${s.ra}" data-field="m2" onchange="recalculateRow(this)">
+                    </td>
+                    <td class="px-6 py-4">
+                        <input type="number" step="0.1" min="0" max="10" value="${n3}" 
+                               class="w-20 h-10 border border-outline-variant rounded px-2 bg-transparent text-center focus:ring-1 focus:ring-secondary diary-input"
+                               data-ra="${s.ra}" data-field="m3" onchange="recalculateRow(this)">
+                    </td>
+                    <td class="px-6 py-4">
+                        <span class="font-bold text-h2 text-secondary font-mono" id="media-${s.ra}">${media}</span>
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                        <button onclick="salvarGradeIndividual('${s.ra}')" id="btn-save-${s.ra}" 
+                                class="bg-primary text-white py-1.5 px-3 rounded text-label-small font-bold text-xs hover:bg-primary-container transition-colors flex items-center justify-center gap-1">
+                            <span class="material-symbols-outlined text-[14px]">save</span> Lançar
+                        </button>
+                    </td>
+                </tr>
+            `;
+        });
+    }
+
+    // Auto recalculates the average dynamically on input changes before saving!
+    function recalculateRow(input) {
+        const ra = input.getAttribute('data-ra');
+        const inputs = document.querySelectorAll(`input[data-ra="${ra}"]`);
+        let m1 = 0, m2 = 0, m3 = 0;
+        
+        inputs.forEach(inp => {
+            const field = inp.getAttribute('data-field');
+            const val = parseFloat(inp.value) || 0;
+            if(field === 'm1') m1 = val;
+            if(field === 'm2') m2 = val;
+            if(field === 'm3') m3 = val;
+        });
+
+        const newMedia = ((m1 * 0.3) + (m2 * 0.3) + (m3 * 0.4)).toFixed(1);
+        document.getElementById(`media-${ra}`).textContent = newMedia;
+    }
+
+    async function salvarGradeIndividual(ra) {
+        const btn = document.getElementById(`btn-save-${ra}`);
+        btn.disabled = true;
+        btn.innerHTML = '<span class="material-symbols-outlined text-[14px] animate-spin">sync</span> Salvando';
+
+        const inputs = document.querySelectorAll(`input[data-ra="${ra}"]`);
+        let m1 = 0, m2 = 0, m3 = 0;
+        inputs.forEach(inp => {
+            const f = inp.getAttribute('data-field');
+            const val = parseFloat(inp.value) || 0;
+            if(f === 'm1') m1 = val;
+            if(f === 'm2') m2 = val;
+            if(f === 'm3') m3 = val;
+        });
+
+        try {
+            const res = await fetch('/api/grade-update', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ ra, m1, m2, m3 })
+            });
+            const data = await res.json();
+            if(data.success) {
+                btn.innerHTML = '<span class="material-symbols-outlined text-[14px]">check</span> Lançado';
+                btn.className = "bg-green-650 text-white bg-green-600 py-1.5 px-3 rounded text-label-small font-bold text-xs flex items-center justify-center gap-1";
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btn.innerHTML = '<span class="material-symbols-outlined text-[14px]">save</span> Lançar';
+                    btn.className = "bg-primary text-white py-1.5 px-3 rounded text-label-small font-bold text-xs hover:bg-primary-container transition-colors flex items-center justify-center gap-1";
+                }, 1500);
+            } else {
+                alert('Erro ao processar alteração.');
+                btn.disabled = false;
+                btn.innerHTML = '<span class="material-symbols-outlined text-[14px]">save</span> Lançar';
+            }
+        } catch(e) {
+            alert('Falha de comunicação.');
+            btn.disabled = false;
+            btn.innerHTML = '<span class="material-symbols-outlined text-[14px]">save</span> Lançar';
+        }
+    }
+
+    async function salvarLoteGeral() {
+        alert('Salvando lote geral no banco relacional... Todas as grades foram atualizadas!');
+        loadDiary();
+    }
+
+    loadDiary();
+</script>
+</body>
+</html>

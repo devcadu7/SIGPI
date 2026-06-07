@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>SIGPI - Submeter Projeto</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#f4f3f8",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "surface-tint": "#3a5f94",
+                    "tertiary-fixed-dim": "#ffb690",
+                    "on-primary-fixed": "#001b3c",
+                    "on-error-container": "#93000a",
+                    "outline": "#737780",
+                    "on-secondary-fixed-variant": "#004c68",
+                    "surface-dim": "#dad9de",
+                    "on-secondary-container": "#005371",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#001e40",
+                    "on-primary-container": "#799dd6",
+                    "on-background": "#1a1c1f",
+                    "surface-bright": "#f9f9fe",
+                    "inverse-on-surface": "#f1f0f5",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#ffdbca",
+                    "outline-variant": "#c3c6d1",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#78d1ff",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "on-tertiary-container": "#d8885c",
+                    "background": "#f9f9fe",
+                    "tertiary": "#381300",
+                    "inverse-surface": "#2f3034",
+                    "tertiary-container": "#592300",
+                    "on-tertiary-fixed-variant": "#723610",
+                    "on-secondary-fixed": "#001e2c",
+                    "inverse-primary": "#a7c8ff",
+                    "surface-variant": "#e2e2e7",
+                    "primary-fixed": "#d5e3ff",
+                    "on-surface-variant": "#43474f",
+                    "surface-container": "#eeedf2",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#003366",
+                    "surface-container-high": "#e8e8ed",
+                    "secondary": "#006689",
+                    "secondary-container": "#5bcaff",
+                    "on-surface": "#1a1c1f",
+                    "surface-container-highest": "#e2e2e7",
+                    "surface": "#f9f9fe",
+                    "secondary-fixed": "#c3e8ff",
+                    "on-tertiary-fixed": "#341100"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "padding-card": "20px",
+                    "base": "8px",
+                    "gutter": "16px",
+                    "section-gap": "32px",
+                    "padding-standard": "16px"
+            },
+            "fontFamily": {
+                    "h1-mobile": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-small": ["Inter"],
+                    "h1-desktop": ["Inter"],
+                    "h2": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-medium": ["Inter"]
+            },
+            "fontSize": {
+                    "h1-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-small": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "h1-desktop": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "h2": ["20px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-medium": ["14px", {"lineHeight": "1.2", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            vertical-align: middle;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f0f5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c3c6d1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #737780;
+        }
+        .bento-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .bento-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-sm text-on-surface">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-screen w-[240px] bg-surface-container-lowest border-r border-outline-variant shadow-sm z-50 flex flex-col py-padding-standard hidden md:flex">
+    <div class="px-6 mb-8">
+        <h1 class="font-h2 text-h2 font-bold text-primary">SIGPI Aluno</h1>
+        <p class="font-label-medium text-label-medium text-on-surface-variant">Portal do Estudante</p>
+    </div>
+    <nav class="flex-grow">
+        <ul class="space-y-1">
+            <li>
+                <a class="flex items-center px-6 py-3 text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-all duration-200" href="/aluno/dashboard/">
+                    <span class="material-symbols-outlined mr-3">dashboard</span>
+                    <span class="font-label-medium">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a class="flex items-center px-6 py-3 text-primary font-bold border-l-4 border-secondary-container bg-surface-container-low transition-all duration-200" href="/aluno/submissoes/">
+                    <span class="material-symbols-outlined mr-3">upload_file</span>
+                    <span class="font-label-medium">Submeter Projeto</span>
+                </a>
+            </li>
+            <li>
+                <a class="flex items-center px-6 py-3 text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-all duration-200" href="/aluno/historico/">
+                    <span class="material-symbols-outlined mr-3">history</span>
+                    <span class="font-label-medium">Histórico</span>
+                </a>
+            </li>
+            <li>
+                <a class="flex items-center px-6 py-3 text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-all duration-200" href="/aluno/avaliacoes/">
+                    <span class="material-symbols-outlined mr-3">feedback</span>
+                    <span class="font-label-medium">Feedback</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="mt-auto px-6 space-y-4">
+        <button onclick="window.location.href='/aluno/submissoes/'" class="w-full bg-primary text-on-primary py-3 px-4 rounded font-label-medium flex items-center justify-center gap-2 hover:bg-primary-container transition-colors">
+            <span class="material-symbols-outlined">add</span>
+            Nova Submissão
+        </button>
+        <div class="pt-4 border-t border-outline-variant space-y-1">
+            <a class="flex items-center py-2 text-on-surface-variant hover:text-primary transition-colors" href="#">
+                <span class="material-symbols-outlined mr-3">settings</span>
+                <span class="font-label-medium">Configurações</span>
+            </a>
+            <a class="flex items-center py-2 text-on-surface-variant hover:text-error transition-colors" href="/logout/">
+                <span class="material-symbols-outlined mr-3">logout</span>
+                <span class="font-label-medium">Sair</span>
+            </a>
+        </div>
+    </div>
+</aside>
+
+<!-- Main Content Area -->
+<main class="md:ml-[240px] min-h-screen flex flex-col">
+    <!-- TopAppBar -->
+    <header class="w-full h-16 bg-surface border-b border-outline-variant flex justify-between items-center px-gutter sticky top-0 z-40">
+        <div class="flex items-center gap-4">
+            <div class="md:hidden">
+                <span class="material-symbols-outlined text-primary cursor-pointer">menu</span>
+            </div>
+            <h2 class="font-h1-desktop text-h2 font-bold text-primary">Submeter Projeto</h2>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="hidden sm:flex bg-surface-container-low px-4 py-1.5 rounded-full items-center gap-2 border border-outline-variant">
+                <span class="material-symbols-outlined text-outline text-[20px]">search</span>
+                <input class="bg-transparent border-none focus:ring-0 text-body-sm w-48" placeholder="Buscar projetos..." type="text"/>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">notifications</span>
+                <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">help</span>
+                <div class="h-8 w-8 rounded-full bg-primary-fixed overflow-hidden border border-outline-variant">
+                    <img alt="User avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBUhOMF5YF2edFYjjJVBShHPf5v2L1Melb0L42rcpLK1ChvRa_XkRRPToPsHZLBVkpkJiSqRn0YfF4UftdYvHSrp3rVSRy4tRsNxigw-94GODmB7AeJeeDefLV8gyFhO1HehXA08pCSbZvDA-hummUHK9jZiGKNaJf6zbR3AIsnOLx0jM865c_6iwNt12S9h21hqwk-DxRwmtiyjQM_F0dFY-aNHqedelP8_wTM-qxMNmS5xHbVmGkpqVfGNyjTLUX708VLe6IgwFE">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Form Canvas -->
+    <div class="p-8 max-w-6xl mx-auto w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-section-gap">
+            <!-- Main Form Section -->
+            <div class="lg:col-span-8 space-y-gutter">
+                <section class="bg-surface-container-lowest p-padding-card rounded border border-outline-variant shadow-sm bento-card">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-2 bg-secondary-container rounded-lg">
+                            <span class="material-symbols-outlined text-on-secondary-container">assignment</span>
+                        </div>
+                        <h3 class="font-h2 text-h2 text-primary">Detalhes da Entrega</h3>
+                    </div>
+                    <form id="submission-form" class="space-y-6">
+                        <div class="space-y-2">
+                            <label class="font-label-medium text-on-surface-variant">Selecione o Projeto Ativo</label>
+                            <select id="project-select" class="w-full h-12 border border-outline-variant rounded px-4 focus:ring-2 focus:ring-secondary transition-all bg-surface">
+                                <!-- Loaded dynamically -->
+                                <option value="Sistema ERP Escolar">Sistema ERP Escolar (PI 1 - Turma A)</option>
+                                <option value="App de Saúde Mental">App de Saúde Mental (PI 2 - Turma B)</option>
+                                <option value="Rede Social Acadêmica">Rede Social Acadêmica (PI 1 - Turma A)</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="font-label-medium text-on-surface-variant">Título da Entrega</label>
+                            <input id="sub-title" required class="w-full h-12 border border-outline-variant rounded px-4 focus:ring-2 focus:ring-secondary transition-all bg-surface" placeholder="Ex: Protótipo de Alta Fidelidade - Etapa 2" type="text"/>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="font-label-medium text-on-surface-variant">Descrição do Trabalho</label>
+                            <textarea id="sub-desc" required class="w-full border border-outline-variant rounded p-4 focus:ring-2 focus:ring-secondary transition-all bg-surface" placeholder="Descreva os principais pontos abordados nesta submissão..." rows="6"></textarea>
+                        </div>
+                    </form>
+                </section>
+                <section class="bg-surface-container-lowest p-padding-card rounded border border-outline-variant shadow-sm bento-card" id="upload-section">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-2 bg-secondary-container rounded-lg">
+                            <span class="material-symbols-outlined text-on-secondary-container">cloud_upload</span>
+                        </div>
+                        <h3 class="font-h2 text-h2 text-primary">Upload de Arquivos</h3>
+                    </div>
+                    <div id="drop-zone" class="border-2 border-dashed border-outline-variant rounded-xl p-10 flex flex-col items-center justify-center text-center space-y-4 hover:border-secondary transition-colors cursor-pointer group bg-surface-container-low">
+                        <span class="material-symbols-outlined text-[48px] text-outline group-hover:text-secondary transition-colors">upload_file</span>
+                        <div>
+                            <p class="font-body-lg text-primary font-bold">Arraste seus arquivos aqui</p>
+                            <p class="text-on-surface-variant">Ou clique para selecionar no computador (PDF, ZIP, DOCX)</p>
+                            <input id="file-input" type="file" class="hidden" accept=".pdf,.zip,.doc,.docx"/>
+                        </div>
+                        <p id="file-name" class="text-secondary font-bold"></p>
+                        <p class="text-label-small text-outline">Tamanho máximo: 50MB</p>
+                    </div>
+                </section>
+            </div>
+            <!-- Sidebar Form Section -->
+            <div class="lg:col-span-4 space-y-gutter">
+                <!-- Professional Links -->
+                <section class="bg-surface-container-lowest p-padding-card rounded border border-outline-variant shadow-sm bento-card">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-2 bg-secondary-container rounded-lg">
+                            <span class="material-symbols-outlined text-on-secondary-container">person_add</span>
+                        </div>
+                        <h3 class="font-h2 text-h2 text-primary">Vincular Perfil</h3>
+                    </div>
+                    <p class="text-on-surface-variant mb-6 text-body-sm">Adicione seus links profissionais para que os avaliadores vejam sua evolução.</p>
+                    <div class="space-y-4">
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[20px] text-secondary">link</span>
+                                <label class="font-label-medium text-on-surface-variant">LinkedIn URL</label>
+                            </div>
+                            <input id="linkedin-url" class="w-full h-10 border border-outline-variant rounded px-3 focus:ring-2 focus:ring-secondary transition-all text-body-sm" placeholder="linkedin.com/in/seuusuario" type="url"/>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[20px] text-secondary">code</span>
+                                <label class="font-label-medium text-on-surface-variant">GitHub URL</label>
+                            </div>
+                            <input id="github-url" class="w-full h-10 border border-outline-variant rounded px-3 focus:ring-2 focus:ring-secondary transition-all text-body-sm" placeholder="github.com/seuusuario" type="url"/>
+                        </div>
+                    </div>
+                </section>
+                <!-- Summary / Submission Info -->
+                <section class="bg-primary p-padding-card rounded border border-primary-container shadow-sm text-on-primary bento-card overflow-hidden relative">
+                    <div class="relative z-10">
+                        <h3 class="font-h2 text-h2 mb-4">Resumo do Envio</h3>
+                        <div class="space-y-3 opacity-90 mb-8">
+                            <div class="flex justify-between text-body-sm">
+                                <span>Prazo Final:</span>
+                                <span class="font-bold">15 Jun, 2026</span>
+                            </div>
+                            <div class="flex justify-between text-body-sm">
+                                <span>Status:</span>
+                                <span class="bg-tertiary-container text-tertiary-fixed-dim px-2 py-0.5 rounded-full text-label-small uppercase tracking-wider font-bold">Pendente</span>
+                            </div>
+                            <div class="flex justify-between text-body-sm">
+                                <span>Tentativas:</span>
+                                <span>01 / 03</span>
+                            </div>
+                        </div>
+                        <button id="btn-submit" type="button" class="w-full bg-secondary-container text-on-secondary-container py-3 rounded font-bold hover:brightness-105 transition-all shadow-md active:scale-95 flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined">send</span> ENVIAR PROJETO
+                        </button>
+                        <button onclick="alert('Rascunho salvo localmente')" type="button" class="w-full mt-3 bg-transparent border border-outline-variant text-on-primary py-2 rounded font-medium hover:bg-white/10 transition-all">
+                            Salvar Rascunho
+                        </button>
+                    </div>
+                    <!-- Abstract BG Shape -->
+                    <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-secondary opacity-20 rounded-full blur-3xl"></div>
+                </section>
+                <!-- Tips / Help Card -->
+                <div class="bg-surface-container p-padding-card rounded-xl border border-outline-variant flex gap-4">
+                    <span class="material-symbols-outlined text-secondary text-[32px]">lightbulb</span>
+                    <div>
+                        <h4 class="font-label-medium text-primary font-bold">Dica de Envio</h4>
+                        <p class="text-label-small text-on-surface-variant">Certifique-se de que todos os arquivos estejam no formato solicitado pelo professor antes de finalizar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile Bottom Nav -->
+    <nav class="md:hidden fixed bottom-0 left-0 w-full bg-surface-container-lowest border-t border-outline-variant h-16 flex justify-around items-center px-4 z-50">
+        <a class="flex flex-col items-center gap-1 text-on-surface-variant" href="/aluno/dashboard/">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="text-[10px] font-medium">Início</span>
+        </a>
+        <a class="flex flex-col items-center gap-1 text-primary" href="/aluno/submissoes/">
+            <span class="material-symbols-outlined">upload_file</span>
+            <span class="text-[10px] font-bold">Enviar</span>
+        </a>
+        <a class="flex flex-col items-center gap-1 text-on-surface-variant" href="/aluno/historico/">
+            <span class="material-symbols-outlined">history</span>
+            <span class="text-[10px] font-medium">Histórico</span>
+        </a>
+        <a class="flex flex-col items-center gap-1 text-on-surface-variant" href="/aluno/avaliacoes/">
+            <span class="material-symbols-outlined">rate_review</span>
+            <span class="text-[10px] font-medium">Feedback</span>
+        </a>
+    </nav>
+</main>
+<script>
+    // Project loading
+    async function loadProjects() {
+        try {
+            const res = await fetch('/api/data');
+            const data = await res.json();
+            const select = document.getElementById('project-select');
+            if (data.projects) {
+                select.innerHTML = '';
+                data.projects.forEach(p => {
+                    select.innerHTML += `<option value="${p.title}">${p.title}</option>`;
+                });
+            }
+        } catch(e) {
+            console.error("Error direct data load:", e);
+        }
+    }
+    loadProjects();
+
+    // File selection UI trigger
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+    const fileNameText = document.getElementById('file-name');
+
+    dropZone.addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', (e) => {
+        if(e.target.files && e.target.files[0]) {
+            fileNameText.textContent = 'Arquivo selecionado: ' + e.target.files[0].name;
+        }
+    });
+
+    // Drag-Drop implementation
+    dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('border-secondary', 'bg-surface-container-high');
+    });
+    dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('border-secondary', 'bg-surface-container-high');
+    });
+    dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('border-secondary', 'bg-surface-container-high');
+        if(e.dataTransfer.files && e.dataTransfer.files[0]) {
+            fileInput.files = e.dataTransfer.files;
+            fileNameText.textContent = 'Arquivo arrastado: ' + e.dataTransfer.files[0].name;
+        }
+    });
+
+    // Form submit connection with simulated API
+    const btnSubmit = document.getElementById('btn-submit');
+    btnSubmit.addEventListener('click', async () => {
+        const title = document.getElementById('sub-title').value.trim();
+        const desc = document.getElementById('sub-desc').value.trim();
+        const project = document.getElementById('project-select').value;
+        const linkedin = document.getElementById('linkedin-url').value;
+        const github = document.getElementById('github-url').value;
+
+        if(!title || !desc) {
+            alert('Por favor, preencha o Título e a Descrição da Entrega.');
+            return;
+        }
+
+        btnSubmit.disabled = true;
+        btnSubmit.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> ENVIANDO...';
+
+        try {
+            const res = await fetch('/api/submit', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    project,
+                    title,
+                    desc,
+                    linkedin,
+                    github,
+                    fileName: fileInput.files[0] ? fileInput.files[0].name : "projeto_entrega.pdf"
+                })
+            });
+            const response = await res.json();
+            if (response.success) {
+                btnSubmit.innerHTML = '<span class="material-symbols-outlined">check_circle</span> ENVIADO COM SUCESSO';
+                btnSubmit.classList.remove('bg-secondary-container', 'text-on-secondary-container');
+                btnSubmit.classList.add('bg-green-600', 'text-white');
+                setTimeout(() => {
+                    window.location.href = '/aluno/historico/';
+                }, 1000);
+            } else {
+                alert('Erro ao processar envio.');
+                btnSubmit.disabled = false;
+                btnSubmit.innerHTML = '<span class="material-symbols-outlined">send</span> ENVIAR PROJETO';
+            }
+        } catch (e) {
+            alert('Erro de conexão ao servidor.');
+            btnSubmit.disabled = false;
+            btnSubmit.innerHTML = '<span class="material-symbols-outlined">send</span> ENVIAR PROJETO';
+        }
+    });
+</script>
+</body>
+</html>

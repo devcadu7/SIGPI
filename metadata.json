@@ -1,0 +1,6 @@
+{
+  "name": "SIGPI",
+  "description": "Sistema Integrado de Gestão de Projetos Integradores (SIGPI) para alunos, professores, coordenação e empresas parceiras.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

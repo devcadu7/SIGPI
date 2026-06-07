@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>SIGPI - Nossas Demandas Tecnológicas</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-container-low": "#f4f3f8",
+                "on-primary-fixed-variant": "#1f477b",
+                "surface-tint": "#3a5f94",
+                "tertiary-fixed-dim": "#ffb690",
+                "on-primary-fixed": "#001b3c",
+                "on-error-container": "#93000a",
+                "outline": "#737780",
+                "on-secondary-fixed-variant": "#004c68",
+                "surface-dim": "#dad9de",
+                "on-secondary-container": "#005371",
+                "on-tertiary": "#ffffff",
+                "primary": "#001e40",
+                "on-primary-container": "#799dd6",
+                "on-background": "#1a1c1f",
+                "surface-bright": "#f9f9fe",
+                "inverse-on-surface": "#f1f0f5",
+                "error": "#ba1a1a",
+                "tertiary-fixed": "#ffdbca",
+                "outline-variant": "#c3c6d1",
+                "surface-container-lowest": "#ffffff",
+                "on-secondary": "#ffffff",
+                "secondary-fixed-dim": "#78d1ff",
+                "primary-fixed-dim": "#a7c8ff",
+                "on-tertiary-container": "#d8885c",
+                "background": "#f9f9fe",
+                "tertiary": "#381300",
+                "inverse-surface": "#2f3034",
+                "tertiary-container": "#592300",
+                "on-tertiary-fixed-variant": "#723610",
+                "on-secondary-fixed": "#001e2c",
+                "inverse-primary": "#a7c8ff",
+                "surface-variant": "#e2e2e7",
+                "primary-fixed": "#d5e3ff",
+                "on-surface-variant": "#43474f",
+                "surface-container": "#eeedf2",
+                "on-error": "#ffffff",
+                "on-primary": "#ffffff",
+                "error-container": "#ffdad6",
+                "primary-container": "#003366",
+                "surface-container-high": "#e8e8ed",
+                "secondary": "#006689",
+                "secondary-container": "#5bcaff",
+                "on-surface": "#1a1c1f",
+                "surface-container-highest": "#e2e2e7",
+                "surface": "#f9f9fe",
+                "secondary-fixed": "#c3e8ff",
+                "on-tertiary-fixed": "#341100"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "gutter": "16px",
+                "padding-card": "20px",
+                "base": "8px",
+                "padding-standard": "16px",
+                "section-gap": "32px"
+            },
+            "fontFamily": {
+                "label-medium": ["Inter"],
+                "h1-mobile": ["Inter"],
+                "label-small": ["Inter"],
+                "h1-desktop": ["Inter"],
+                "body-lg": ["Inter"],
+                "h2": ["Inter"],
+                "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                "label-medium": ["14px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                "h1-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "label-small": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                "h1-desktop": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-lg": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "h2": ["20px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-[#f9f9fe] text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-padding-standard h-16 bg-surface border-b border-outline-variant">
+    <div class="flex items-center gap-4">
+        <span class="text-h2 font-h2 font-bold text-primary">SIGPI - Portal Corporativo</span>
+    </div>
+    <div class="flex items-center gap-padding-standard">
+        <span id="company-user-name" class="text-sm font-semibold text-primary">Padaria Alfa Ltda</span>
+        <div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant">
+            <img alt="Corporate avatar" class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=120">
+        </div>
+    </div>
+</header>
+
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-60 flex flex-col z-40 bg-surface-container-low shadow-sm border-r border-outline-variant">
+    <div class="p-padding-standard mb-4">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-primary rounded flex items-center justify-center text-white">
+                <span class="material-symbols-outlined">domain</span>
+            </div>
+            <div>
+                <h2 class="font-h2 text-h2 font-bold text-primary">Nossas Demandas</h2>
+                <p class="text-[10px] text-on-surface-variant uppercase">Membro Conveniado</p>
+            </div>
+        </div>
+    </div>
+    <nav class="flex-grow">
+        <a class="text-on-surface-variant flex items-center gap-base px-padding-standard py-3 hover:bg-surface-container transition-all" href="/empresa/dashboard/">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="font-label-medium text-label-medium">Dashboard</span>
+        </a>
+        <a class="text-primary font-bold border-l-4 border-secondary-container bg-surface-container-high flex items-center gap-base px-padding-standard py-3 hover:bg-surface-container transition-all" href="/empresa/demandas/">
+            <span class="material-symbols-outlined">lightbulb</span>
+            <span class="font-label-medium text-label-medium">Nossas Demandas</span>
+        </a>
+        <a class="text-on-surface-variant flex items-center gap-base px-padding-standard py-3 hover:bg-surface-container transition-all" href="/empresa/projetos/">
+            <span class="material-symbols-outlined">developer_mode</span>
+            <span class="font-label-medium text-label-medium">Projetos Alocados</span>
+        </a>
+    </nav>
+</aside>
+
+<!-- Main Area -->
+<main class="ml-60 pt-20 p-section-gap min-h-screen">
+    <div class="flex justify-between items-center mb-8">
+        <div>
+            <h1 class="font-h1-desktop text-h1-desktop text-primary">Nossos Desafios Tecnológicos</h1>
+            <p class="text-body-lg text-on-surface-variant">Cadastre e gerencie as dores e propostas operacionais enviadas para os Projetos Integradores de Estudantes.</p>
+        </div>
+        <button onclick="cadastrarNovaDemanda()" class="bg-primary text-white h-12 py-3 px-6 rounded-lg font-bold hover:brightness-110 active:scale-95 transition-all flex items-center gap-2 shadow">
+            <span class="material-symbols-outlined">add_circle</span> Inserir Novo Desafio
+        </button>
+    </div>
+
+    <!-- Demand list grid -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8" id="corporate-own-demands-container">
+        <!-- Dynamically populated -->
+        <article class="bg-white border border-outline-variant rounded-xl p-6 shadow-sm">
+            <div class="flex justify-between items-start mb-4">
+                <span class="bg-[#e8f5e9] text-[#2e7d32] border border-green-200 font-bold px-3 py-0.5 rounded-full text-xs uppercase tracking-wider">Aprovado</span>
+                <span class="text-xs text-on-surface-variant font-bold">Portfólio PI 1</span>
+            </div>
+            <h3 class="font-h2 text-h2 text-primary font-bold mb-2">Automação de Controle de Validade em Panificados</h3>
+            <p class="text-body-sm text-on-surface-variant mb-6 leading-relaxed">
+                Desenvolvimento de um sistema ou tela de fácil alimentação para alertar operadores sobre lotes de pães especiais com prazo de vencimento próximo, visando zerar o desperdício alimentar.
+            </p>
+            <div class="border-t pt-4 flex justify-between items-center text-xs text-on-surface-variant font-medium">
+                <span>Alocado no projeto: <strong class="text-secondary select-all">Sistema ERP Escolar</strong></span>
+                <span>Submetido em 12 Maia</span>
+            </div>
+        </article>
+    </section>
+</main>
+
+<script>
+    async function cadastrarNovaDemanda() {
+        const title = prompt("Digite o Título do seu Novo Desafio Tecnológico:");
+        if (!title) return;
+        const desc = prompt("Descreva a deficiência/problema que os estudantes devem sanar no Projeto Integrador:");
+        if (!desc) return;
+
+        try {
+            const res = await fetch('/api/empresa-add', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    name: 'Padaria Alfa Ltda',
+                    cnpj: '12.333.444/0001-90',
+                    contactEmail: 'tecnologia@padariaalfa.com',
+                    proposalDemand: `${title} - Detalhes: ${desc}`
+                })
+            });
+            const data = await res.json();
+            if (data.success) {
+                alert('Seu desafio técnico focado em PI foi registrado e passará pela validação pedagógica da coordenação!');
+                loadOwnDemands();
+            } else {
+                alert('Erro ao processar desafio corporativo.');
+            }
+        } catch(e) {
+            alert('Erro de conexão ao servidor.');
+        }
+    }
+
+    async function loadOwnDemands() {
+        try {
+            const res = await fetch('/api/data');
+            const data = await res.json();
+            const container = document.getElementById('corporate-own-demands-container');
+            container.innerHTML = '';
+
+            const companies = data.companies || [];
+            // Filter padaria alfa or related
+            const alfaList = companies.filter(c => c.name.toLowerCase().includes('alfa'));
+
+            if (alfaList.length === 0) {
+                container.innerHTML = `<p class="col-span-2 text-center text-on-surface-variant py-8">Nenhuma demanda corporativa cadastrada no sistema.</p>`;
+                return;
+            }
+
+            alfaList.forEach((c) => {
+                container.innerHTML += `
+                    <article class="bg-white border border-outline-variant rounded-xl p-6 shadow-sm hover:shadow transition-shadow">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-[#e8f5e9] text-[#2e7d32] border border-green-200 font-bold px-3 py-0.5 rounded-full text-xs uppercase tracking-wider">Aprovado</span>
+                            <span class="text-xs text-on-surface-variant font-bold">Portfólio PI</span>
+                        </div>
+                        <h3 class="font-h2 text-h2 text-primary font-bold mb-2">${c.name} - Inovação</h3>
+                        <p class="text-body-sm text-on-surface-variant mb-6 leading-relaxed italic">
+                            "${c.proposalDemand}"
+                        </p>
+                        <div class="border-t pt-4 flex justify-between items-center text-xs text-on-surface-variant font-medium">
+                            <span>Status: <strong class="text-secondary uppercase">Vinculado a Escola</strong></span>
+                            <span>Contato: ${c.contactEmail}</span>
+                        </div>
+                    </article>
+                `;
+            });
+
+        } catch(e) {
+            console.error("Erro ao carregar dores/demandas:", e);
+        }
+    }
+
+    loadOwnDemands();
+</script>
+</body>
+</html>

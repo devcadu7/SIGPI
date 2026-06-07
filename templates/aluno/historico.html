@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>SIGPI - Histórico de Entregas</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#dad9de",
+                    "secondary-fixed": "#c3e8ff",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#ffdbca",
+                    "primary-fixed": "#d5e3ff",
+                    "inverse-primary": "#a7c8ff",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#f9f9fe",
+                    "secondary-fixed-dim": "#78d1ff",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "outline": "#737780",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "inverse-on-surface": "#f1f0f5",
+                    "surface-tint": "#3a5f94",
+                    "on-tertiary-fixed-variant": "#723610",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c3c6d1",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#5bcaff",
+                    "tertiary": "#381300",
+                    "on-primary-fixed": "#001b3c",
+                    "on-secondary-container": "#005371",
+                    "on-surface": "#1a1c1f",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#2f3034",
+                    "on-surface-variant": "#43474f",
+                    "on-secondary-fixed-variant": "#004c68",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#341100",
+                    "on-secondary-fixed": "#001e2c",
+                    "primary": "#001e40",
+                    "surface-variant": "#e2e2e7",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#e2e2e7",
+                    "surface": "#f9f9fe",
+                    "surface-container-low": "#f4f3f8",
+                    "secondary": "#006689",
+                    "primary-container": "#003366",
+                    "on-background": "#1a1c1f",
+                    "surface-container": "#eeedf2",
+                    "tertiary-container": "#592300",
+                    "on-tertiary-container": "#d8885c",
+                    "on-primary-container": "#799dd6",
+                    "background": "#f9f9fe",
+                    "surface-container-high": "#e8e8ed",
+                    "tertiary-fixed-dim": "#ffb690"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "gutter": "16px",
+                    "section-gap": "32px",
+                    "padding-card": "20px",
+                    "padding-standard": "16px"
+            },
+            "fontFamily": {
+                    "label-medium": ["Inter"],
+                    "h2": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h1-desktop": ["Inter"],
+                    "label-small": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "h1-mobile": ["Inter"]
+            },
+            "fontSize": {
+                    "label-medium": ["14px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "h2": ["20px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h1-desktop": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-small": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h1-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #c3c6d1;
+        border-radius: 10px;
+      }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-lg min-h-screen flex">
+<!-- SideNavBar -->
+<aside class="w-60 h-screen fixed left-0 top-0 bg-surface border-r border-outline-variant flex flex-col py-padding-standard gap-base z-50">
+    <div class="px-gutter mb-6">
+        <h1 class="font-h2 text-h2 font-bold text-primary">SIGPI</h1>
+        <p class="font-label-small text-label-small text-on-surface-variant">Portal do Estudante</p>
+    </div>
+    <nav class="flex flex-col flex-1 gap-1 px-2">
+        <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container transition-all font-label-medium text-label-medium" href="/aluno/dashboard/">
+            <span class="material-symbols-outlined text-primary">dashboard</span>
+            <span>Dashboard</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container transition-all font-label-medium text-label-medium" href="/aluno/submissoes/">
+            <span class="material-symbols-outlined">upload_file</span>
+            <span>Submeter Projeto</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-secondary-container text-on-secondary-container border-l-4 border-secondary font-bold font-label-medium text-label-medium" href="/aluno/historico/">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history</span>
+            <span>Histórico</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container transition-all font-label-medium text-label-medium" href="/aluno/avaliacoes/">
+            <span class="material-symbols-outlined">rate_review</span>
+            <span>Feedback</span>
+        </a>
+    </nav>
+    <div class="mt-auto px-4 flex items-center gap-3">
+        <img alt="User Avatar" class="w-10 h-10 rounded-full border border-outline-variant h-10 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBUhOMF5YF2edFYjjJVBShHPf5v2L1Melb0L42rcpLK1ChvRa_XkRRPToPsHZLBVkpkJiSqRn0YfF4UftdYvHSrp3rVSRy4tRsNxigw-94GODmB7AeJeeDefLV8gyFhO1HehXA08pCSbZvDA-hummUHK9jZiGKNaJf6zbR3AIsnOLx0jM865c_6iwNt12S9h21hqwk-DxRwmtiyjQM_F0dFY-aNHqedelP8_wTM-qxMNmS5xHbVmGkpqVfGNyjTLUX708VLe6IgwFE">
+        <div>
+            <p class="font-label-medium text-label-medium font-bold text-primary">Lucas Silva</p>
+            <p class="text-[10px] text-on-surface-variant">RA: 20240192</p>
+        </div>
+    </div>
+    <div class="px-gutter pt-2">
+        <a href="/logout/" class="flex items-center gap-2 text-error text-xs hover:underline">
+            <span class="material-symbols-outlined text-xs">logout</span> Sair
+        </a>
+    </div>
+</aside>
+
+<div class="flex-1 ml-60 flex flex-col">
+    <!-- TopNavBar -->
+    <header class="flex justify-between items-center h-16 px-gutter w-full sticky top-0 z-40 bg-surface-container-lowest shadow-sm border-b border-outline-variant">
+        <div class="flex items-center gap-base">
+            <span class="text-on-surface-variant font-label-medium text-label-medium">Portal do Aluno</span>
+            <span class="text-outline">/</span>
+            <span class="text-primary font-bold font-label-medium text-label-medium">Histórico de Entregas</span>
+        </div>
+        <div class="flex items-center gap-4">
+            <button class="p-2 rounded-full hover:bg-surface-container-low transition-colors relative">
+                <span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+                <span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+            </button>
+            <button class="p-2 rounded-full hover:bg-surface-container-low transition-colors">
+                <span class="material-symbols-outlined text-on-surface-variant">account_circle</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="p-gutter lg:p-section-gap max-w-7xl mx-auto w-full">
+        <!-- Header Section -->
+        <div class="mb-8">
+            <h2 class="font-h1-desktop text-h1-desktop text-primary mb-2">Histórico de Entregas</h2>
+            <p class="text-on-surface-variant font-body-lg">Consulte e gerencie todas as submissões realizadas nos seus projetos acadêmicos.</p>
+        </div>
+
+        <!-- Bento Filter Section -->
+        <section class="bg-surface border border-outline-variant rounded-xl p-padding-standard mb-8 shadow-sm">
+            <div class="flex flex-col md:flex-row md:items-end gap-gutter">
+                <div class="flex-1">
+                    <label class="block font-label-medium text-label-medium text-on-surface-variant mb-2">Filtrar por Período</label>
+                    <div class="relative">
+                        <select class="w-full appearance-none bg-white border border-outline-variant rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-secondary-container focus:border-secondary outline-none transition-all text-on-surface">
+                            <option>Todos os Semestres</option>
+                            <option>Semestre 2024.1</option>
+                            <option>Semestre 2023.2</option>
+                            <option>Semestre 2023.1</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+                    </div>
+                </div>
+                <div class="flex-[1.5]">
+                    <label class="block font-label-medium text-label-medium text-on-surface-variant mb-2">Selecionar Projeto</label>
+                    <div class="relative">
+                        <select id="project-filter-select" class="w-full appearance-none bg-white border border-outline-variant rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-secondary-container focus:border-secondary outline-none transition-all text-on-surface">
+                            <option value="all">Todos os Projetos Ativos</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+                    </div>
+                </div>
+                <button onclick="applyFilters()" class="bg-primary text-white px-6 py-2.5 rounded-lg font-label-medium text-label-medium hover:brightness-110 transition-all flex items-center justify-center gap-2 h-[46px]">
+                    <span class="material-symbols-outlined text-[20px]">search</span>
+                    Aplicar Filtros
+                </button>
+            </div>
+        </section>
+
+        <!-- Data Table Section -->
+        <section class="bg-surface border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+            <div class="overflow-x-auto custom-scrollbar">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-[#F5F5F5] border-b border-outline-variant">
+                        <tr>
+                            <th class="px-6 py-4 font-bold text-primary font-label-medium text-label-medium">ID</th>
+                            <th class="px-6 py-4 font-bold text-primary font-label-medium text-label-medium">Projeto</th>
+                            <th class="px-6 py-4 font-bold text-primary font-label-medium text-label-medium">Data Submissão</th>
+                            <th class="px-6 py-4 font-bold text-primary font-label-medium text-label-medium">Versão</th>
+                            <th class="px-6 py-4 font-bold text-primary font-label-medium text-label-medium">Status</th>
+                            <th class="px-6 py-4 font-bold text-primary font-label-medium text-label-medium text-right">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-outline-variant" id="history-rows">
+                        <!-- Loaded dynamically -->
+                    </tbody>
+                </table>
+            </div>
+            <!-- Pagination -->
+            <div class="px-6 py-4 flex items-center justify-between border-t border-outline-variant bg-white">
+                <p class="text-on-surface-variant font-label-small text-label-small">Mostrando <span id="results-count">1-4 de 28</span> resultados</p>
+                <div class="flex items-center gap-2">
+                    <button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant hover:bg-surface-container-low transition-colors">
+                        <span class="material-symbols-outlined text-[18px]">chevron_left</span>
+                    </button>
+                    <button class="w-8 h-8 flex items-center justify-center rounded bg-primary text-white font-bold text-label-small">1</button>
+                    <button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant hover:bg-surface-container-low transition-colors text-label-small">2</button>
+                    <button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant hover:bg-surface-container-low transition-colors text-label-small">3</button>
+                    <span class="text-outline">...</span>
+                    <button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant hover:bg-surface-container-low transition-colors">
+                        <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Note -->
+        <div class="mt-section-gap flex items-start gap-4 p-4 bg-secondary-fixed text-on-secondary-fixed-variant rounded-xl border border-secondary-fixed-dim">
+            <span class="material-symbols-outlined">info</span>
+            <div>
+                <p class="font-bold mb-1">Dica de Gestão</p>
+                <p class="font-body-sm opacity-90">Entregas em status "Rejeitado" devem ser corrigidas em até 5 dias úteis para manter o cronograma do projeto em dia. Consulte o feedback detalhado na seção correspondente.</p>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script>
+    // Global submissons holder
+    let allSubmissions = [];
+
+    async function loadHistory() {
+        try {
+            const res = await fetch('/api/data');
+            const data = await res.json();
+            
+            allSubmissions = data.submissions || [];
+            
+            // Fill project filter select
+            const filterSelect = document.getElementById('project-filter-select');
+            if (data.projects) {
+                data.projects.forEach(p => {
+                    filterSelect.innerHTML += `<option value="${p.title}">${p.title}</option>`;
+                });
+            }
+
+            renderRows(allSubmissions);
+
+        } catch (e) {
+            console.error("Erro ao carregar histórico:", e);
+        }
+    }
+
+    function renderRows(subs) {
+        const tbody = document.getElementById('history-rows');
+        tbody.innerHTML = '';
+        
+        if (subs.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="6" class="px-6 py-8 text-center text-on-surface-variant font-medium">Nenhuma submissão encontrada.</td></tr>`;
+            document.getElementById('results-count').textContent = '0-0 de 0';
+            return;
+        }
+
+        subs.forEach((sub, i) => {
+            let statusBadge = '';
+            let actionBtn = '';
+            
+            switch (sub.status.toUpperCase()) {
+                case 'APROVADO':
+                    statusBadge = `<span class="bg-green-150 text-green-700 bg-green-50 px-3 py-1 rounded-full text-[12px] font-bold border border-green-200">Aprovado</span>`;
+                    actionBtn = `<button onclick="window.location.href='/aluno/avaliacoes/'" class="text-secondary font-bold text-label-small hover:underline">Ver Detalhes</button>`;
+                    break;
+                case 'REJEITADO':
+                    statusBadge = `<span class="bg-[#ffebee] text-[#c62828] px-3 py-1 rounded-full text-[12px] font-bold border border-red-200">Rejeitado</span>`;
+                    actionBtn = `<button onclick="window.location.href='/aluno/submissoes/'" class="text-secondary font-bold text-label-small hover:underline">Corrigir</button>`;
+                    break;
+                case 'PENDENTE':
+                    statusBadge = `<span class="bg-[#fff9c4] text-[#827717] px-3 py-1 rounded-full text-[12px] font-bold border border-yellow-250">Pendente</span>`;
+                    actionBtn = `<button onclick="window.location.href='/aluno/submissoes/'" class="text-secondary font-bold text-label-small hover:underline">Ajustes</button>`;
+                    break;
+                default: // ENVIADO
+                    statusBadge = `<span class="bg-[#e3f2fd] text-[#1565c0] px-3 py-1 rounded-full text-[12px] font-bold border border-blue-200">Enviado</span>`;
+                    actionBtn = `<button onclick="window.location.href='/aluno/submissoes/'" class="text-secondary font-bold text-label-small hover:underline">Ajustes</button>`;
+            }
+
+            const isZebra = i % 2 !== 0 ? 'bg-[#F5F5F5]' : '';
+
+            tbody.innerHTML += `
+                <tr class="${isZebra} hover:bg-surface-container-low transition-colors cursor-pointer" onclick="rowClicked(this)">
+                    <td class="px-6 py-4 text-on-surface-variant font-body-sm font-bold">#${sub.id}</td>
+                    <td class="px-6 py-4 font-medium text-on-surface font-body-sm">${sub.project}</td>
+                    <td class="px-6 py-4 text-on-surface-variant font-body-sm">${sub.date}</td>
+                    <td class="px-6 py-4 text-on-surface-variant font-body-sm">v${sub.version}</td>
+                    <td class="px-6 py-4">${statusBadge}</td>
+                    <td class="px-6 py-4 text-right" onclick="event.stopPropagation()">${actionBtn}</td>
+                </tr>
+            `;
+        });
+
+        document.getElementById('results-count').textContent = `1-${subs.length} de ${subs.length}`;
+    }
+
+    function rowClicked(element) {
+        element.classList.add('scale-[0.995]');
+        setTimeout(() => element.classList.remove('scale-[0.995]'), 150);
+    }
+
+    function applyFilters() {
+        const filterVal = document.getElementById('project-filter-select').value;
+        if (filterVal === 'all') {
+            renderRows(allSubmissions);
+        } else {
+            const filtered = allSubmissions.filter(s => s.project === filterVal);
+            renderRows(filtered);
+        }
+    }
+
+    loadHistory();
+</script>
+</body>
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>SIGPI - Dashboard do Aluno</title>
+    <!-- Google Fonts: Inter & Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#dad9de",
+                    "secondary-fixed": "#c3e8ff",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#ffdbca",
+                    "primary-fixed": "#d5e3ff",
+                    "inverse-primary": "#a7c8ff",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#f9f9fe",
+                    "secondary-fixed-dim": "#78d1ff",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "outline": "#737780",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "inverse-on-surface": "#f1f0f5",
+                    "surface-tint": "#3a5f94",
+                    "on-tertiary-fixed-variant": "#723610",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c3c6d1",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#5bcaff",
+                    "tertiary": "#381300",
+                    "on-primary-fixed": "#001b3c",
+                    "on-secondary-container": "#005371",
+                    "on-surface": "#1a1c1f",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#2f3034",
+                    "on-surface-variant": "#43474f",
+                    "on-secondary-fixed-variant": "#004c68",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#341100",
+                    "on-secondary-fixed": "#001e2c",
+                    "primary": "#001e40",
+                    "surface-variant": "#e2e2e7",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#e2e2e7",
+                    "surface": "#f9f9fe",
+                    "surface-container-low": "#f4f3f8",
+                    "secondary": "#006689",
+                    "primary-container": "#003366",
+                    "on-background": "#1a1c1f",
+                    "surface-container": "#eeedf2",
+                    "tertiary-container": "#592300",
+                    "on-tertiary-container": "#d8885c",
+                    "on-primary-container": "#799dd6",
+                    "background": "#f9f9fe",
+                    "surface-container-high": "#e8e8ed",
+                    "tertiary-fixed-dim": "#ffb690"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "gutter": "16px",
+                    "section-gap": "32px",
+                    "padding-card": "20px",
+                    "padding-standard": "16px"
+            },
+            "fontFamily": {
+                    "label-medium": ["Inter"],
+                    "h2": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h1-desktop": ["Inter"],
+                    "label-small": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "h1-mobile": ["Inter"]
+            },
+            "fontSize": {
+                    "label-medium": ["14px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "h2": ["20px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h1-desktop": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-small": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h1-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(204, 204, 204, 0.4);
+        }
+        .zebra-row:nth-child(even) {
+            background-color: #f4f3f8;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-screen fixed left-0 top-0 w-60 bg-surface border-r border-outline-variant py-padding-standard gap-base z-50">
+    <div class="px-gutter mb-8">
+        <h1 class="font-h2 text-h2 font-bold text-primary">SIGPI - Aluno</h1>
+        <p class="font-label-small text-label-small text-on-surface-variant">Portal do Estudante</p>
+    </div>
+    <nav class="flex flex-col gap-1 px-base">
+        <!-- Active: Dashboard -->
+        <a class="flex items-center gap-3 px-gutter py-3 bg-secondary-container text-on-secondary-container border-l-4 border-secondary font-bold transition-all" href="/aluno/dashboard/">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="font-label-medium text-label-medium">Dashboard</span>
+        </a>
+        <a class="flex items-center gap-3 px-gutter py-3 text-on-surface-variant hover:bg-surface-container transition-all hover:bg-surface-container-high" href="/aluno/submissoes/">
+            <span class="material-symbols-outlined">upload_file</span>
+            <span class="font-label-medium text-label-medium">Submeter Projeto</span>
+        </a>
+        <a class="flex items-center gap-3 px-gutter py-3 text-on-surface-variant hover:bg-surface-container transition-all hover:bg-surface-container-high" href="/aluno/historico/">
+            <span class="material-symbols-outlined">history</span>
+            <span class="font-label-medium text-label-medium">Histórico</span>
+        </a>
+        <a class="flex items-center gap-3 px-gutter py-3 text-on-surface-variant hover:bg-surface-container transition-all hover:bg-surface-container-high" href="/aluno/avaliacoes/">
+            <span class="material-symbols-outlined">rate_review</span>
+            <span class="font-label-medium text-label-medium">Feedback</span>
+        </a>
+    </nav>
+    <div class="mt-auto px-gutter border-t border-outline-variant pt-padding-standard flex items-center gap-3">
+        <img alt="User Avatar" class="w-10 h-10 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBUhOMF5YF2edFYjjJVBShHPf5v2L1Melb0L42rcpLK1ChvRa_XkRRPToPsHZLBVkpkJiSqRn0YfF4UftdYvHSrp3rVSRy4tRsNxigw-94GODmB7AeJeeDefLV8gyFhO1HehXA08pCSbZvDA-hummUHK9jZiGKNaJf6zbR3AIsnOLx0jM865c_6iwNt12S9h21hqwk-DxRwmtiyjQM_F0dFY-aNHqedelP8_wTM-qxMNmS5xHbVmGkpqVfGNyjTLUX708VLe6IgwFE">
+        <div class="overflow-hidden">
+            <p class="font-label-medium text-label-medium truncate text-primary">Lucas Silva</p>
+            <p class="text-[10px] text-on-surface-variant truncate">RA: 20240192</p>
+        </div>
+    </div>
+    <div class="px-gutter pt-2">
+        <a href="/logout/" class="flex items-center gap-2 text-error text-xs hover:underline">
+            <span class="material-symbols-outlined text-xs">logout</span> Sair
+        </a>
+    </div>
+</aside>
+
+<!-- Main Wrapper -->
+<div class="flex-1 md:ml-60 flex flex-col">
+    <!-- TopNavBar -->
+    <header class="flex justify-between items-center h-16 px-gutter w-full sticky top-0 z-40 bg-surface-container-lowest shadow-sm border-b border-outline-variant">
+        <div class="flex items-center gap-base">
+            <img alt="SIGPI Logo" class="h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDuiSALvIiSGCYwCWtdZEdNzVMc-39gxlkHsLgrWA3-BL8YmDaIofOd2rdtPuJO8-TDC2C6GwaG4ljLSPy69rLE3BykHZqKYcDMtlJe1FzCjxUTg4DNmgPyBrUjZI-Dl53h0nekKiKAypNyhg_rAgxLyUkFzI5yvFz32Z1oHHqOoG21UZIXLbHFgNiXhmL-JpRnFa9cm0RPZXo89NGynceVOzK6w8ygdQcgjrTpe5_B-3OKLvKnJNn2f0BfEMDNMkVeeqDD6ksBBFo">
+        </div>
+        <div class="flex items-center gap-gutter">
+            <div class="hidden md:flex items-center gap-gutter mr-base">
+                <a class="font-label-medium text-label-medium text-primary border-b-2 border-secondary font-semibold py-1" href="/aluno/dashboard/">Dashboard</a>
+                <a class="font-label-medium text-label-medium text-on-surface-variant hover:bg-surface-container-low transition-colors px-2 py-1" href="/aluno/historico/">Projetos</a>
+                <a class="font-label-medium text-label-medium text-on-surface-variant hover:bg-surface-container-low transition-colors px-2 py-1" href="/aluno/avaliacoes/">Feedbacks</a>
+            </div>
+            <div class="flex items-center gap-base">
+                <span id="welcome-user" class="text-sm font-semibold text-primary">Lucas Silva</span>
+                <button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-transform active:scale-90">
+                    <span class="material-symbols-outlined text-primary">notifications</span>
+                </button>
+                <a href="/login/" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-transform active:scale-90">
+                    <span class="material-symbols-outlined text-primary">account_circle</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <main class="p-gutter md:p-section-gap max-w-7xl mx-auto w-full flex flex-col gap-section-gap">
+        <!-- Greeting -->
+        <div>
+            <h1 class="font-h1-desktop text-h1-desktop text-primary">Olá, <span class="student-name">Lucas Silva</span></h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant">Seu progresso acadêmico está <span id="progress-text">85%</span> concluído para este semestre.</p>
+        </div>
+
+        <!-- Bento Layout Section 1: Notifications -->
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+            <div class="lg:col-span-3 bg-surface-container-lowest border border-outline-variant rounded-xl p-padding-card shadow-sm">
+                <div class="flex items-center gap-2 mb-gutter border-b border-outline-variant pb-2">
+                    <span class="material-symbols-outlined text-secondary">campaign</span>
+                    <h2 class="font-h2 text-h2 text-primary">Notificações Importantes</h2>
+                </div>
+                <ul class="space-y-base" id="notifications-list">
+                    <li class="flex items-start gap-3 p-base rounded-lg bg-surface-container-low border-l-4 border-error">
+                        <span class="material-symbols-outlined text-error mt-0.5">priority_high</span>
+                        <div>
+                            <p class="font-label-medium text-label-medium text-on-surface">Prazo Final: Entrega do Projeto Integrador II vence amanhã.</p>
+                            <p class="font-label-small text-label-small text-on-surface-variant">Hoje, 14:30</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3 p-base rounded-lg hover:bg-surface-container transition-colors">
+                        <span class="material-symbols-outlined text-secondary mt-0.5">task_alt</span>
+                        <div>
+                            <p class="font-label-medium text-label-medium text-on-surface">Feedback Disponível: Professor Roberto avaliou sua última submissão.</p>
+                            <p class="font-label-small text-label-small text-on-surface-variant">Ontem, 09:15</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3 p-base rounded-lg hover:bg-surface-container transition-colors">
+                        <span class="material-symbols-outlined text-on-surface-variant mt-0.5">info</span>
+                        <div>
+                            <p class="font-label-medium text-label-medium text-on-surface">Novo Material: Guia de Normas ABNT 2024 adicionado aos documentos.</p>
+                            <p class="font-label-small text-label-small text-on-surface-variant">02 Mai, 16:00</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Meus Projetos Ativos -->
+        <section>
+            <div class="flex items-center justify-between mb-gutter">
+                <h2 class="font-h2 text-h2 text-primary">Meus Projetos Ativos</h2>
+                <a href="/aluno/historico/" class="text-secondary font-label-medium text-label-medium flex items-center gap-1 hover:underline">
+                    Ver todos <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter" id="projects-grid">
+                <!-- Loaded Dynamically -->
+                <div class="glass-card rounded-xl p-padding-card flex flex-col gap-base">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-label-medium text-label-medium font-bold text-primary">Sistema ERP Escolar</h3>
+                        <span class="px-2 py-0.5 rounded-full bg-tertiary-container text-on-tertiary-container text-[10px] font-bold uppercase">Pendente</span>
+                    </div>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Desenvolvimento de interface para gestão de notas e faltas.</p>
+                    <div class="mt-auto">
+                        <div class="flex justify-between items-end mb-1">
+                            <span class="text-[11px] text-on-surface-variant">Próxima Entrega: 15/05</span>
+                            <span class="text-[11px] font-bold text-primary">65%</span>
+                        </div>
+                        <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                            <div class="h-full bg-secondary-container w-[65%]"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card rounded-xl p-padding-card flex flex-col gap-base">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-label-medium text-label-medium font-bold text-primary">App de Saúde Mental</h3>
+                        <span class="px-2 py-0.5 rounded-full bg-green-100 text-green-800 text-[10px] font-bold uppercase">Aprovado</span>
+                    </div>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Pesquisa e prototipagem de fluxos de meditação guiada.</p>
+                    <div class="mt-auto">
+                        <div class="flex justify-between items-end mb-1">
+                            <span class="text-[11px] text-on-surface-variant">Próxima Entrega: Finalizado</span>
+                            <span class="text-[11px] font-bold text-primary">100%</span>
+                        </div>
+                        <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                            <div class="h-full bg-secondary-fixed-dim w-full"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl p-padding-card flex flex-col gap-base">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-label-medium text-label-medium font-bold text-primary">Rede Social Acadêmica</h3>
+                        <span class="px-2 py-0.5 rounded-full bg-tertiary-container text-on-tertiary-container text-[10px] font-bold uppercase">Pendente</span>
+                    </div>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Implementação de sistema de autenticação via OAuth2.</p>
+                    <div class="mt-auto">
+                        <div class="flex justify-between items-end mb-1">
+                            <span class="text-[11px] text-on-surface-variant">Próxima Entrega: 22/05</span>
+                            <span class="text-[11px] font-bold text-primary">30%</span>
+                        </div>
+                        <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                            <div class="h-full bg-secondary-container w-[30%]"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Two-Column Grid -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+            <!-- Cronograma de Entregas -->
+            <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-padding-card shadow-sm">
+                <div class="flex items-center gap-2 mb-gutter">
+                    <span class="material-symbols-outlined text-primary">calendar_month</span>
+                    <h2 class="font-h2 text-h2 text-primary">Cronograma de Entregas</h2>
+                </div>
+                <div class="overflow-hidden rounded-lg border border-outline-variant">
+                    <table class="w-full border-collapse">
+                        <thead>
+                            <tr class="bg-primary text-white font-label-medium text-label-medium">
+                                <th class="py-3 px-2 text-center border-r border-outline">Seg</th>
+                                <th class="py-3 px-2 text-center border-r border-outline">Ter</th>
+                                <th class="py-3 px-2 text-center border-r border-outline">Qua</th>
+                                <th class="py-3 px-2 text-center border-r border-outline">Qui</th>
+                                <th class="py-3 px-2 text-center border-r border-outline">Sex</th>
+                                <th class="py-3 px-2 text-center">Sáb</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-on-surface font-body-sm">
+                            <tr class="border-b border-outline-variant zebra-row">
+                                <td class="py-4 text-center border-r border-outline-variant opacity-30">29</td>
+                                <td class="py-4 text-center border-r border-outline-variant opacity-30">30</td>
+                                <td class="py-4 text-center border-r border-outline-variant">1</td>
+                                <td class="py-4 text-center border-r border-outline-variant">2</td>
+                                <td class="py-4 text-center border-r border-outline-variant">3</td>
+                                <td class="py-4 text-center">4</td>
+                            </tr>
+                            <tr class="border-b border-outline-variant zebra-row">
+                                <td class="py-4 text-center border-r border-outline-variant">6</td>
+                                <td class="py-4 text-center border-r border-outline-variant">7</td>
+                                <td class="py-4 text-center border-r border-outline-variant relative">
+                                    8
+                                    <div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-error rounded-full"></div>
+                                </td>
+                                <td class="py-4 text-center border-r border-outline-variant">9</td>
+                                <td class="py-4 text-center border-r border-outline-variant">10</td>
+                                <td class="py-4 text-center">11</td>
+                            </tr>
+                            <tr class="border-b border-outline-variant zebra-row">
+                                <td class="py-4 text-center border-r border-outline-variant">13</td>
+                                <td class="py-4 text-center border-r border-outline-variant">14</td>
+                                <td class="py-4 text-center border-r border-outline-variant bg-secondary-fixed">15</td>
+                                <td class="py-4 text-center border-r border-outline-variant">16</td>
+                                <td class="py-4 text-center border-r border-outline-variant">17</td>
+                                <td class="py-4 text-center">18</td>
+                            </tr>
+                            <tr class="zebra-row">
+                                <td class="py-4 text-center border-r border-outline-variant">20</td>
+                                <td class="py-4 text-center border-r border-outline-variant relative">
+                                    21
+                                    <div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-error rounded-full"></div>
+                                </td>
+                                <td class="py-4 text-center border-r border-outline-variant">22</td>
+                                <td class="py-4 text-center border-r border-outline-variant">23</td>
+                                <td class="py-4 text-center border-r border-outline-variant">24</td>
+                                <td class="py-4 text-center">25</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Resumo de Feedback Recente -->
+            <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-padding-card shadow-sm">
+                <div class="flex items-center gap-2 mb-gutter">
+                    <span class="material-symbols-outlined text-primary">reviews</span>
+                    <h2 class="font-h2 text-h2 text-primary">Feedback Recente</h2>
+                </div>
+                <div class="space-y-gutter" id="recent-feedback-container">
+                    <div class="p-padding-standard rounded-lg bg-surface-container-low border border-outline-variant relative overflow-hidden">
+                        <div class="absolute right-0 top-0 w-1 h-full bg-secondary"></div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-label-medium text-label-medium font-bold text-primary">Interface v1.2</h4>
+                            <span class="text-[10px] text-on-surface-variant">Há 2 dias</span>
+                        </div>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant italic mb-2">"O design visual está excelente, mas considere melhorar o contraste nos botões secundários."</p>
+                        <p class="text-[11px] font-semibold text-secondary">— Prof. Roberto Lima</p>
+                    </div>
+                    <div class="p-padding-standard rounded-lg bg-surface-container-low border border-outline-variant relative overflow-hidden">
+                        <div class="absolute right-0 top-0 w-1 h-full bg-error"></div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-label-medium text-label-medium font-bold text-primary">Arquitetura de Banco</h4>
+                            <span class="text-[10px] text-on-surface-variant">04 Mai</span>
+                        </div>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant italic mb-2">"A normalização precisa ser revista na tabela de transações. Verifique a 3ª forma normal."</p>
+                        <p class="text-[11px] font-semibold text-secondary">— Profa. Ana Costa</p>
+                    </div>
+                </div>
+                <button onclick="window.location.href='/aluno/avaliacoes/'" class="w-full mt-4 py-2 bg-surface-container border border-outline-variant rounded-lg font-label-medium text-label-medium text-on-surface-variant hover:bg-surface-container-high transition-colors">
+                    Ver Histórico Completo
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Info -->
+    <footer class="mt-auto py-gutter px-gutter md:px-section-gap text-center border-t border-outline-variant text-[12px] text-on-surface-variant bg-surface-container-lowest">
+        © 2024 SIGPI - Sistema Integrado de Gestão de Projetos Integradores. Todos os direitos reservados.
+    </footer>
+</div>
+
+<!-- Mobile Navigation Bar -->
+<div class="md:hidden fixed bottom-0 left-0 w-full bg-surface-container-lowest flex justify-around items-center h-16 border-t border-outline-variant z-50">
+    <a class="flex flex-col items-center text-secondary border-t-2 border-secondary pt-1 px-4" href="/aluno/dashboard/">
+        <span class="material-symbols-outlined">dashboard</span>
+        <span class="text-[10px]">Início</span>
+    </a>
+    <a class="flex flex-col items-center text-on-surface-variant pt-1 px-4" href="/aluno/submissoes/">
+        <span class="material-symbols-outlined">upload_file</span>
+        <span class="text-[10px]">Submeter</span>
+    </a>
+    <a class="flex flex-col items-center text-on-surface-variant pt-1 px-4" href="/aluno/historico/">
+        <span class="material-symbols-outlined">history</span>
+        <span class="text-[10px]">Histórico</span>
+    </a>
+    <a class="flex flex-col items-center text-on-surface-variant pt-1 px-4" href="/aluno/avaliacoes/">
+        <span class="material-symbols-outlined">rate_review</span>
+        <span class="text-[10px]">Feedback</span>
+    </a>
+</div>
+
+<script>
+    // Load dynamic data from consolidated mock API
+    async function loadDashboardData() {
+        try {
+            const res = await fetch('/api/data');
+            const data = await res.json();
+            
+            // Render active projects
+            const projectsGrid = document.getElementById('projects-grid');
+            if (data.projects && data.projects.length > 0) {
+                projectsGrid.innerHTML = '';
+                // Limit to 3 most relevant active ones
+                data.projects.slice(0, 3).forEach(project => {
+                    const statusClass = project.status === 'APROVADO' ? 'bg-green-100 text-green-800' : 'bg-orange-100 text-orange-850';
+                    projectsGrid.innerHTML += `
+                        <div class="glass-card rounded-xl p-padding-card flex flex-col gap-base transition-all hover:scale-102">
+                            <div class="flex justify-between items-start">
+                                <h3 class="font-label-medium text-label-medium font-bold text-primary">${project.title}</h3>
+                                <span class="px-2 py-0.5 rounded-full ${statusClass} text-[10px] font-bold uppercase">${project.status}</span>
+                            </div>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">${project.desc}</p>
+                            <div class="mt-auto pt-4">
+                                <div class="flex justify-between items-end mb-1">
+                                    <span class="text-[11px] text-on-surface-variant">Entrega: ${project.deadline}</span>
+                                    <span class="text-[11px] font-bold text-primary">${project.progress}%</span>
+                                </div>
+                                <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                                    <div class="h-full bg-secondary-container" style="width: ${project.progress}%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+
+            // Bind names dynamically
+            if (data.users && data.users.student) {
+                document.querySelectorAll('.student-name').forEach(el => el.textContent = data.users.student.name);
+                document.getElementById('welcome-user').textContent = data.users.student.name;
+            }
+        } catch (e) {
+            console.error("Erro ao carregar dados do SIGPI API:", e);
+        }
+    }
+
+    loadDashboardData();
+
+    // Hover design reinforcements
+    document.querySelectorAll('.glass-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-4px)';
+            card.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.08)';
+            card.style.transition = 'all 0.3s ease';
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+            card.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.05)';
+        });
+    });
+</script>
+</body>
+</html>

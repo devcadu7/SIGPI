@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>SIGPI - Portal da Empresa Conveniada</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-container-low": "#f4f3f8",
+                "on-primary-fixed-variant": "#1f477b",
+                "surface-tint": "#3a5f94",
+                "tertiary-fixed-dim": "#ffb690",
+                "on-primary-fixed": "#001b3c",
+                "on-error-container": "#93000a",
+                "outline": "#737780",
+                "on-secondary-fixed-variant": "#004c68",
+                "surface-dim": "#dad9de",
+                "on-secondary-container": "#005371",
+                "on-tertiary": "#ffffff",
+                "primary": "#001e40",
+                "on-primary-container": "#799dd6",
+                "on-background": "#1a1c1f",
+                "surface-bright": "#f9f9fe",
+                "inverse-on-surface": "#f1f0f5",
+                "error": "#ba1a1a",
+                "tertiary-fixed": "#ffdbca",
+                "outline-variant": "#c3c6d1",
+                "surface-container-lowest": "#ffffff",
+                "on-secondary": "#ffffff",
+                "secondary-fixed-dim": "#78d1ff",
+                "primary-fixed-dim": "#a7c8ff",
+                "on-tertiary-container": "#d8885c",
+                "background": "#f9f9fe",
+                "tertiary": "#381300",
+                "inverse-surface": "#2f3034",
+                "tertiary-container": "#592300",
+                "on-tertiary-fixed-variant": "#723610",
+                "on-secondary-fixed": "#001e2c",
+                "inverse-primary": "#a7c8ff",
+                "surface-variant": "#e2e2e7",
+                "primary-fixed": "#d5e3ff",
+                "on-surface-variant": "#43474f",
+                "surface-container": "#eeedf2",
+                "on-error": "#ffffff",
+                "on-primary": "#ffffff",
+                "error-container": "#ffdad6",
+                "primary-container": "#003366",
+                "surface-container-high": "#e8e8ed",
+                "secondary": "#006689",
+                "secondary-container": "#5bcaff",
+                "on-surface": "#1a1c1f",
+                "surface-container-highest": "#e2e2e7",
+                "surface": "#f9f9fe",
+                "secondary-fixed": "#c3e8ff",
+                "on-tertiary-fixed": "#341100"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "gutter": "16px",
+                "padding-card": "20px",
+                "base": "8px",
+                "padding-standard": "16px",
+                "section-gap": "32px"
+            },
+            "fontFamily": {
+                "label-medium": ["Inter"],
+                "h1-mobile": ["Inter"],
+                "label-small": ["Inter"],
+                "h1-desktop": ["Inter"],
+                "body-lg": ["Inter"],
+                "h2": ["Inter"],
+                "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                "label-medium": ["14px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                "h1-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "label-small": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                "h1-desktop": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-lg": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "h2": ["20px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-[#f9f9fe] text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-padding-standard h-16 bg-surface border-b border-outline-variant">
+    <div class="flex items-center gap-4">
+        <span class="text-h2 font-h2 font-bold text-primary">SIGPI - Portal Corporativo</span>
+    </div>
+    <div class="flex items-center gap-padding-standard">
+        <span id="company-user-name" class="text-sm font-semibold text-primary">Padaria Alfa Ltda</span>
+        <div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant">
+            <img alt="Corporate profile image" id="company-avatar" class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=120">
+        </div>
+    </div>
+</header>
+
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-60 flex flex-col z-40 bg-surface-container-low shadow-sm border-r border-outline-variant">
+    <div class="p-padding-standard mb-4">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-primary rounded flex items-center justify-center text-white">
+                <span class="material-symbols-outlined">domain</span>
+            </div>
+            <div>
+                <h2 class="font-h2 text-h2 font-bold text-primary">Área da Empresa</h2>
+                <p class="text-[10px] text-on-surface-variant uppercase">Membro Conveniado</p>
+            </div>
+        </div>
+    </div>
+    <nav class="flex-grow">
+        <a class="text-primary font-bold border-l-4 border-secondary-container bg-surface-container-high flex items-center gap-base px-padding-standard py-3 hover:bg-surface-container transition-all" href="/empresa/dashboard/">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="font-label-medium text-label-medium">Dashboard</span>
+        </a>
+        <a class="text-on-surface-variant flex items-center gap-base px-padding-standard py-3 hover:bg-surface-container transition-all" href="/empresa/demandas/">
+            <span class="material-symbols-outlined">lightbulb</span>
+            <span class="font-label-medium text-label-medium">Nossas Demandas</span>
+        </a>
+        <a class="text-on-surface-variant flex items-center gap-base px-padding-standard py-3 hover:bg-surface-container transition-all" href="/empresa/projetos/">
+            <span class="material-symbols-outlined">developer_mode</span>
+            <span class="font-label-medium text-label-medium">Projetos Alocados</span>
+        </a>
+    </nav>
+    <div class="mt-auto border-t border-outline-variant pb-4">
+        <a class="text-on-surface-variant flex items-center gap-base px-padding-standard py-3 hover:bg-surface-container transition-all" href="/logout/">
+            <span class="material-symbols-outlined">logout</span>
+            <span class="font-label-medium text-label-medium">Sair</span>
+        </a>
+    </div>
+</aside>
+
+<!-- Main Area -->
+<main class="ml-60 pt-20 p-section-gap min-h-screen">
+    <div class="mb-8">
+        <h1 class="font-h1-desktop text-h1-desktop text-primary">Espaço da Empresa Parceira</h1>
+        <p class="text-body-lg text-on-surface-variant">Acompanhe as soluções em desenvolvimento pelos alunos para responder às suas demandas tecnológicas.</p>
+    </div>
+
+    <!-- Quick indicators -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-padding-standard mb-section-gap">
+        <div class="bg-white p-6 rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-all">
+            <h3 class="text-label-medium text-on-surface-variant font-medium mb-1">Nossas Demandas Ativas</h3>
+            <p id="comp-active-demands-ind" class="text-[32px] font-bold text-primary">01</p>
+            <span class="text-xs text-on-secondary-container mt-2 inline-block">100% de aproveitamento educacional</span>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-all">
+            <h3 class="text-label-medium text-on-surface-variant font-medium mb-1">Alunos Resolvendo</h3>
+            <p class="text-[32px] font-bold text-primary">05</p>
+            <span class="text-xs text-on-secondary-container mt-2 inline-block">Trabalhando no MVP operacional</span>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-all border-l-4 border-l-secondary">
+            <h3 class="text-label-medium text-on-surface-variant font-medium mb-1">Status de Homologação</h3>
+            <span class="bg-[#e8f5e9] text-[#2e7d32] font-bold px-3 py-1 rounded-full text-xs uppercase inline-block mt-3">Convenio Homologado</span>
+        </div>
+    </section>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <!-- Associated Student Teams -->
+        <section class="lg:col-span-8 bg-white rounded-xl border border-outline-variant overflow-hidden shadow-sm">
+            <div class="p-6 border-b border-outline-variant bg-surface-bright flex justify-between items-center">
+                <h2 class="text-h2 font-h2 font-bold text-primary">Seu Projeto Solucionador de PI</h2>
+                <span class="text-label-small bg-secondary-container text-on-secondary-container px-2 py-1 rounded font-bold">Em Desenvolvimento</span>
+            </div>
+            
+            <div class="p-6 space-y-6">
+                <div>
+                    <h3 class="font-bold text-secondary text-lg mb-1" id="sol-proj-title">Sistema ERP Escolar</h3>
+                    <p class="text-body-sm text-on-surface-variant mb-4 font-medium" id="sol-proj-desc">Protótipo funcional de alta-fidelidade adaptado para automação de pequenos comércios e escolas.</p>
+                </div>
+                
+                <div class="border-t border-r-0 pt-6">
+                    <h4 class="font-bold text-primary text-body-lg mb-3">Integrantes da Equipe:</h4>
+                    <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3 p-3 bg-surface-container-low rounded border border-outline-variant/50">
+                            <div class="w-10 h-10 bg-primary/15 rounded-full flex items-center justify-center font-bold text-primary text-sm">L</div>
+                            <div>
+                                <p class="font-bold text-on-surface font-body-sm text-sm">Lucas Silva</p>
+                                <p class="text-xs text-on-surface-variant">Líder do Projeto | RA: 20240192</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="pt-6 border-t font-body-sm text-right flex justify-end gap-3">
+                    <button onclick="window.location.href='/empresa/projetos/'" class="bg-primary text-white py-2 px-6 rounded font-bold hover:opacity-95 shadow">Deixar Feedback Técnico</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meeting Schedule / Avisos -->
+        <section class="lg:col-span-4 bg-white rounded-xl border border-outline-variant overflow-hidden shadow-sm flex flex-col">
+            <div class="p-6 border-b border-outline-variant bg-[#F5F5F5]">
+                <h2 class="text-h2 font-h2 font-bold text-primary flex items-center gap-1">
+                    <span class="material-symbols-outlined text-secondary">calendar_month</span> Encontros Marcados
+                </h2>
+            </div>
+            <div class="p-6 space-y-4 flex-grow overflow-y-auto max-h-[350px]">
+                <div class="p-4 bg-surface-container rounded-lg border-l-4 border-l-secondary">
+                    <h4 class="font-bold text-primary text-body-sm mb-1">Apresentação do MVP Final</h4>
+                    <p class="text-xs text-on-surface-variant mb-2">Discussão com os alunos e professor orientador sobre os refinamentos da aplicação.</p>
+                    <div class="flex justify-between text-[11px] font-bold text-secondary">
+                        <span>18 Jun, 2026</span>
+                        <span>19:30 - 21:00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script>
+    async function loadCompanyDashboard() {
+        try {
+            const res = await fetch('/api/data');
+            const data = await res.json();
+            
+            // Set corporate user name
+            const activeUser = data.currentUser || { name: 'Padaria Alfa Ltda' };
+            document.getElementById('company-user-name').textContent = activeUser.name;
+
+            // Associate projects dynamically to this company if matching demands
+            if (data.projects && data.projects.length > 0) {
+                // Find matching project that mentions this company or general first
+                const proj = data.projects[0];
+                document.getElementById('sol-proj-title').textContent = proj.title;
+                document.getElementById('sol-proj-desc').textContent = proj.feedback || 'Inovador sistema desenhado sob medida para automações operacionais no PI.';
+            }
+
+            // Demand count of user
+            if(data.companies) {
+                const cmp = data.companies.find(c => c.name.toLowerCase().includes('alfa') || c.name.toLowerCase().includes(activeUser.name.toLowerCase()));
+                if (cmp) {
+                    document.getElementById('comp-active-demands-ind').textContent = '01';
+                }
+            }
+
+        } catch(e) {
+            console.error("Erro ao carregar dados corporativos:", e);
+        }
+    }
+    loadCompanyDashboard();
+</script>
+</body>
+</html>
